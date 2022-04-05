@@ -2,32 +2,13 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import styled from "styled-components"
 
+import Section from "./Components/Section" 
+
 import "./styles.css"
 
 
 const Title = styled.h1`
-    font-family: sans-serif;
     color: #b19cd9;
-`
-
-const Section = styled.div`
-    background-color: #ffffff;
-    border: solid 3px grey;
-    margin: 4px;
-    width: 300px;
-    height: 50px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: left;
-    font-size: 40px;
-    color: #ff6961;
-`
-
-const WeekdayTitle = styled.div`
-    display: flex;
-    justify-content: center;
-    width: 50px;
-    border-right: solid 3px lightgrey;
 `
 
 class Main extends React.Component {
@@ -36,27 +17,13 @@ class Main extends React.Component {
       <>
         <Title>Progress Tracker</Title>
         <div>
-          <Section>
-            <WeekdayTitle>M</WeekdayTitle>
-          </Section>
-          <Section>
-            <WeekdayTitle>T</WeekdayTitle>
-          </Section>
-          <Section>
-            <WeekdayTitle>W</WeekdayTitle>
-          </Section>
-          <Section>
-            <WeekdayTitle>T</WeekdayTitle>
-          </Section>
-          <Section>
-            <WeekdayTitle>F</WeekdayTitle>
-          </Section>
-          <Section>
-            <WeekdayTitle>S</WeekdayTitle>
-          </Section>
-          <Section>
-            <WeekdayTitle>S</WeekdayTitle>
-          </Section>
+          <Section dayName={"M"} />
+          <Section dayName={"T"} />
+          <Section dayName={"W"} />
+          <Section dayName={"T"} />
+          <Section dayName={"F"} />
+          <Section dayName={"S"} />
+          <Section dayName={"S"} />
         </div>
       </>
     );
@@ -64,3 +31,10 @@ class Main extends React.Component {
 }
 
 ReactDOM.render(<Main />, document.getElementById('root'))
+
+
+//TO DO:
+// move Section to its own file
+// make sure the WeekdayTitle is moved with it
+// export Section so we can use it in our index.js file
+// pass through text as a prop
