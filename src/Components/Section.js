@@ -21,10 +21,20 @@ const WeekdayTitle = styled.div`
     border-right: solid 3px lightgrey;
 `
 
+const WeekendTitle = styled(WeekdayTitle)`
+    background-color: lightgrey;
+    border-radius: 7px 0 0 7px;
+`
+
 export default function Section({dayName}) {
     return (
         <StyledSection>
-            <WeekdayTitle>{dayName}</WeekdayTitle>
+            {dayName === "S" ?
+                <WeekendTitle>{dayName}</WeekendTitle> : <WeekdayTitle>{dayName}</WeekdayTitle>}
         </StyledSection>
     )
-} 
+}
+
+//TO DO:
+// extend the WeekdayTitle component to make a WeekendTitle component
+// use the WeekendTitle if the text prop is an 'S'

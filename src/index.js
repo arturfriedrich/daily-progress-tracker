@@ -31,10 +31,3 @@ class Main extends React.Component {
 }
 
 ReactDOM.render(<Main />, document.getElementById('root'))
-
-
-//TO DO:
-// move Section to its own file
-// make sure the WeekdayTitle is moved with it
-// export Section so we can use it in our index.js file
-// pass through text as a prop
