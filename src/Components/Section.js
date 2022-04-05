@@ -34,7 +34,3 @@ export default function Section({dayName}) {
         </StyledSection>
     )
 }
-
-//TO DO:
-// extend the WeekdayTitle component to make a WeekendTitle component
-// use the WeekendTitle if the text prop is an 'S'
