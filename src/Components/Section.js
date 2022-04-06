@@ -1,6 +1,15 @@
 import React from "react"
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 
+
+const loading = keyframes`
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: ${({progress}) => `${progress}%`}
+    }
+`
 
 const StyledSection = styled.div`
     background-color: #ffffff;
@@ -39,6 +48,7 @@ const ProgressBar = styled.div`
     }};
     height: 50px;
     width: ${({progress}) => `${progress}%` || "0%"};
+    animation: 3s ${loading} ease-in;
 `
 
 export default function Section({dayName, progress}) {
