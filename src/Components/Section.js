@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
+
 const StyledSection = styled.div`
     background-color: #ffffff;
     border: solid 3px grey;
@@ -17,7 +18,7 @@ const StyledSection = styled.div`
 const WeekdayTitle = styled.div`
     display: flex;
     justify-content: center;
-    width: 50px;
+    min-width: 50px;
     border-right: solid 3px lightgrey;
 `
 
@@ -26,11 +27,24 @@ const WeekendTitle = styled(WeekdayTitle)`
     border-radius: 7px 0 0 7px;
 `
 
-export default function Section({dayName}) {
+const ProgressSection = styled.div`
+    width: 250px;
+`
+
+const ProgressBar = styled.div`
+    background-color: red;
+    height: 50px;
+    width: ${({progress}) => progress || "0%"};
+`
+
+export default function Section({dayName, progress}) {
     return (
         <StyledSection>
             {dayName === "S" ?
                 <WeekendTitle>{dayName}</WeekendTitle> : <WeekdayTitle>{dayName}</WeekdayTitle>}
+            <ProgressSection>
+                <ProgressBar progress={progress} />
+            </ProgressSection>
         </StyledSection>
     )
 }

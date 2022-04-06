@@ -17,13 +17,13 @@ class Main extends React.Component {
       <>
         <Title>Progress Tracker</Title>
         <div>
-          <Section dayName={"M"} />
-          <Section dayName={"T"} />
-          <Section dayName={"W"} />
-          <Section dayName={"T"} />
-          <Section dayName={"F"} />
-          <Section dayName={"S"} />
-          <Section dayName={"S"} />
+          <Section dayName={"M"} progress="100%" />
+          <Section dayName={"T"} progress="80%" />
+          <Section dayName={"W"} progress="70%" />
+          <Section dayName={"T"} progress="60%" />
+          <Section dayName={"F"} progress="40%" />
+          <Section dayName={"S"} progress="20%" />
+          <Section dayName={"S"} progress="10%" />
         </div>
       </>
     );
@@ -31,3 +31,9 @@ class Main extends React.Component {
 }
 
 ReactDOM.render(<Main />, document.getElementById('root'))
+
+// TO DO:
+// make a ProgressBar component
+// pass through a progress value
+// make width dependant on progress value
+// make color dependant on progress value
