@@ -17,13 +17,13 @@ class Main extends React.Component {
       <>
         <Title>Progress Tracker</Title>
         <div>
-          <Section dayName={"M"} progress="100%" />
-          <Section dayName={"T"} progress="80%" />
-          <Section dayName={"W"} progress="70%" />
-          <Section dayName={"T"} progress="60%" />
-          <Section dayName={"F"} progress="40%" />
-          <Section dayName={"S"} progress="20%" />
-          <Section dayName={"S"} progress="10%" />
+          <Section dayName={"M"} progress={100} />
+          <Section dayName={"T"} progress={80} />
+          <Section dayName={"W"} progress={70} />
+          <Section dayName={"T"} progress={60} />
+          <Section dayName={"F"} progress={40} />
+          <Section dayName={"S"} progress={20} />
+          <Section dayName={"S"} progress={10} />
         </div>
       </>
     );

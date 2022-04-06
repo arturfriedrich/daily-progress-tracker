@@ -32,9 +32,13 @@ const ProgressSection = styled.div`
 `
 
 const ProgressBar = styled.div`
-    background-color: red;
+    background-color: ${({progress}) => {
+        if ( progress <= 20 ) return "#76B947" 
+        else if ( progress > 20 && progress <= 50 ) return "#FF8300"
+        else return "#DF362D"
+    }};
     height: 50px;
-    width: ${({progress}) => progress || "0%"};
+    width: ${({progress}) => `${progress}%` || "0%"};
 `
 
 export default function Section({dayName, progress}) {
