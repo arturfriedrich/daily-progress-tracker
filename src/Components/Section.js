@@ -42,22 +42,33 @@ const ProgressSection = styled.div`
 
 const ProgressBar = styled.div`
     background-color: ${({progress}) => {
-        if ( progress <= 20 ) return "#76B947" 
+        if ( progress <= 20 ) return "#DF362D" 
         else if ( progress > 20 && progress <= 50 ) return "#FF8300"
-        else return "#DF362D"
+        else if ( progress > 50 ) return "#76B947"
+        else return ""
     }};
     height: 50px;
     width: ${({progress}) => `${progress}%` || "0%"};
     animation: 3s ${loading} ease-in;
 `
 
-export default function Section({dayName, progress}) {
+const TodayProgressBar = styled(ProgressBar)`
+    background-color: #C197D2;
+`
+
+export default function Section({dayName, progress, day}) {
+    
+    let dayOfTheWeek = new Date().getDay()
+
+    const isToday = day === dayOfTheWeek
+
     return (
         <StyledSection>
             {dayName === "S" ?
                 <WeekendTitle>{dayName}</WeekendTitle> : <WeekdayTitle>{dayName}</WeekdayTitle>}
             <ProgressSection>
-                <ProgressBar progress={progress} />
+                {isToday && <TodayProgressBar progress={progress} />}
+                {!isToday && <ProgressBar progress={progress} />}
             </ProgressSection>
         </StyledSection>
     )
